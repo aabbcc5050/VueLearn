@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>vue 学习</title>
+    <script src="https://cdn.bootcss.com/vue/2.2.2/vue.min.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <p>所以，computed只计算一次，而methods每次重新计算</p>
+        <ul>
+            <li v-for="n in 10">
+                computed{{n}}: {{computed_test}}
+            </li>
+        </ul>
+        <p>----------------------------------------------------</p>
+        <ul>
+            <li v-for="n in 10">
+                methods{{n}}: {{method_test()}}
+            </li>
+        </ul>
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            computed: {
+                //计算属性的getter
+                computed_test: function () {
+                    // this指向vm实例
+                    return Math.random()
+                }
+            },
+            methods: {
+                method_test: function () {
+                    return Math.random()
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
