@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Vue 测试实例 - 菜鸟教程(runoob.com)</title>
+    <script src="https://cdn.bootcss.com/vue/2.2.2/vue.min.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <button v-on:click="say('hi')">Say hi</button>
+        <button v-on:click="say('what')">Say what</button>
+        <button v-on:click="say(aaa)">{{aaa}}</button>
+    </div>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                aaa: Math.random()
+            },
+            methods: {
+                say: function (message) {
+                    alert(message);
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

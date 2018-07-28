@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Vue 测试实例 - 菜鸟教程(runoob.com)</title>
+    <script src="https://cdn.bootcss.com/vue/2.2.2/vue.min.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <button v-on:click="say(students[0])">{{students[0].name}}</button>
+        <p>-----------------------------------------------------------------</p>
+        <button v-for="stu in students" v-on:click="say(stu)">{{stu.name}}</button>
+        <p>-----------------------------------------------------------------</p>
+        
+        <table>
+            <tr v-for="stu in students">
+                <td v-for="info in stu">{{info}}</td>
+            </tr>
+        </table>
+    </div>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                students: [{ name: '小黑', id: 'i001', sex: '男' }, { name: '小明', id: 'i002', sex: '女' }, { name: '小红', id: 'i003', sex: '男' }]
+            },
+            methods: {
+                say: function (stu) {
+                    var str = '姓名：' + stu.name + ',id:' + stu.id + ',sex：' + stu.sex;
+                    alert(str);
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
