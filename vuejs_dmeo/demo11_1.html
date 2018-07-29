@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Vue 测试实例 - 菜鸟教程(runoob.com)</title>
+    <script src="https://cdn.bootcss.com/vue/2.2.2/vue.min.js"></script>
+</head>
+<div id="app">
+    <p>input 元素:</p>
+    <input v-model="message" placeholder="编辑我...">
+    <p>您输入得消息是:{{message}}</p>
+    <p>textarea元素:</p>
+    <textarea v-model="message2" placeholder="多文本输入框"></textarea>
+    <p style="white-space: pre">{{message2}}</p>
+</div>
+
+<body>
+
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                message: null,
+                message2: null
+            }
+        })
+    </script>
+</body>
+
+</html>
